@@ -63,4 +63,8 @@ export default class Vector {
    clone() {
       return new Vector(this.x, this.y)
    }
+
+   equals(b: Vector) {
+      return this.x === b.x && this.y === b.y
+   }
 }

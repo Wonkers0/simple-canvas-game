@@ -1,9 +1,11 @@
 import "./style.css"
 import { onDraw } from "./canvas"
+import { connect } from "./client"
 
 const canvas = document.querySelector("canvas") as HTMLCanvasElement
 export const ctx = canvas.getContext("2d") as CanvasRenderingContext2D
 
+connect()
 window.addEventListener("resize", resize)
 function resize() {
    canvas.width = document.body.clientWidth
