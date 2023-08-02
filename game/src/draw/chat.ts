@@ -2,11 +2,10 @@ import { text } from "../utilities/text"
 import Vector from "../utilities/vector"
 import { ctx } from "../main"
 import { playerSize } from "./player"
-import { cameraX, cameraY, frameCount } from "./canvas"
+import { frameCount } from "./canvas"
 import { ws } from "../networking/client"
 import { Player } from "../types/player"
 import { initPacket } from "../networking/client"
-import { smoothSine } from "../utilities/math"
 
 export let chatOpen = false
 export let message = ""
@@ -72,7 +71,7 @@ export function drawChatBase(
    doText(textCenterTop.x, textCenterTop.y)
 
    if (cursor) {
-      const opacity = Math.sin(((((frameCount) % 60) * 2) / 120) * Math.PI)
+      const opacity = Math.sin((((frameCount % 60) * 2) / 120) * Math.PI)
 
       const pos = textCenterTop.add(textSize.x / 2, 0)
       const size = textSize.y
