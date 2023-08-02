@@ -15,6 +15,14 @@ export default class Vector {
       return new Vector(this.x + pos.x, this.y + pos.y)
    }
 
+   subtract(x: number, y: number) {
+      return new Vector(this.x - x, this.y - y)
+   }
+
+   subtractPos(pos: Vector) {
+      return new Vector(this.x - pos.x, this.y - pos.y)
+   }
+
    max(x: number, y: number) {
       return new Vector(
          x == null ? this.x : Math.max(x, this.x),
@@ -66,5 +74,12 @@ export default class Vector {
 
    equals(b: Vector) {
       return this.x === b.x && this.y === b.y
+   }
+
+   asPosition() {
+      return {
+         x: this.x,
+         y: this.y
+      }
    }
 }
